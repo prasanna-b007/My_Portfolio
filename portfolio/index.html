@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasanna B | Premium Developer Portfolio</title>
+    <meta name="description" content="A futuristic developer portfolio for Prasanna B, specializing in Full Stack and AI Engineering.">
+    <!-- Google Fonts: Bricolage Grotesque & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- AOS, Typed.js, tsParticles -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+    <!-- High-end Cursor Gradient Following Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="brand">
+                <span class="logo-icon">P</span>
+                <span class="logo-text">Prasanna B</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#achievements" class="nav-item">Achievements</a>
+                <a href="#showcase" class="nav-item">Showcase</a>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="btn-contact">Contact</a>
+            </div>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-fullscreen">
+        <div id="hero-particles"></div>
+        <canvas id="three-canvas"></canvas>
+        
+        <div class="hero-main">
+            <div class="hero-badge" data-aos="fade-down">
+                <span class="pulse"></span> Available for elite projects
+            </div>
+            <h1 class="hero-title" data-aos="fade-up">
+                Building the <span class="gradient-text">Future</span> of Web.
+            </h1>
+            <div class="hero-typer" data-aos="fade-up" data-aos-delay="100">
+                I'm <span>Prasanna B</span>, a <span id="typed-roles"></span>
+            </div>
+            <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
+                Computer Science Engineering Student at Sri Shakthi Institute of Engineering and Technology. Crafting high-performance full-stack applications with AI at the core.
+            </p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#projects" class="btn-modern primary">Explore Work <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/prasanna-b007" target="_blank" class="btn-modern secondary"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div class="hero-footer-stats">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <span class="stat-val">Bachelor of Engineering</span>
+                <span class="stat-label">Engineering Focus</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                <span class="stat-val">Java</span>
+                <span class="stat-label">Core Mastery</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                <span class="stat-val">AI</span>
+                <span class="stat-label">Innovation Drive</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Bento Style -->
+    <section id="about" class="section-container">
+        <div class="section-tag">About Me</div>
+        <div class="bento-grid">
+            <!-- Card 1: Intro -->
+            <div class="bento-card" data-aos="fade-up">
+                <div class="card-interior">
+                    <i class="fas fa-user-astronaut"></i>
+                    <h2>Aspiring Full-Stack Engineer</h2>
+                    <p>Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, focused on building scalable web applications, AI-powered platforms, and modern full-stack systems.</p>
+                    <div class="bento-badges">
+                        <span class="bento-badge">Java</span>
+                        <span class="bento-badge">React</span>
+                        <span class="bento-badge">Node.js</span>
+                        <span class="bento-badge">MongoDB</span>
+                        <span class="bento-badge">Flutter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Education -->
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-interior">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Academic Pathway</h3>
+                    <div class="edu-details">
+                        <p class="edu-degree">Bachelor of Engineering – Computer Science</p>
+                        <p class="edu-org">Sri Shakthi Institute of Engineering and Technology</p>
+                        <p class="edu-year">Expected Graduation:2028</p>
+                    </div>
+                    <div class="code-window decorative" style="margin-top: 20px; opacity: 0.6;">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content" style="padding: 10px; font-size: 0.7rem;">
+                            <code><span class="keyword">class</span> Academics {<br>
+                            &nbsp;&nbsp;cgpa: <span class="string">'8.29'</span><br>
+                            }</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Vision -->
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-interior">
+                    <i class="fas fa-rocket"></i>
+                    <h3>The Vision</h3>
+                    <p>"My goal is to build intelligent systems and scalable platforms that make advanced technology accessible and impactful for real-world users."</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Stats -->
+            <div class="bento-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-interior">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Developer Impact</h3>
+                    <div class="stats-list">
+                        <div class="stat-row highlight">
+                            <span class="stat-label-bento">Projects Built</span>
+                            <span class="stat-value-bento">4+</span>
+                        </div>
+                        <div class="stat-row highlight">
+                            <span class="stat-label-bento">Technologies Used</span>
+                            <span class="stat-value-bento">10+</span>
+                        </div>
+                        <div class="stat-row highlight">
+                            <span class="stat-label-bento">Certifications</span>
+                            <span class="stat-value-bento">6+</span>
+                        </div>
+                        <div class="stat-row highlight">
+                            <span class="stat-label-bento">Hackathons</span>
+                            <span class="stat-value-bento">2+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section - Floating Grid -->
+    <section id="skills" class="section-container bg-alt">
+        <div class="section-tag">Capabilities</div>
+        <h2 class="section-heading">Tech Stack & Mastery</h2>
+        
+        <div class="skills-showcase">
+            <div class="skill-category-wrap" data-aos="zoom-in">
+                <h3>Frontend & Logic</h3>
+                <div class="skill-badges">
+                    <div class="badge-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="badge-item"><i class="fab fa-react"></i> React</div>
+                    <div class="badge-item"><i class="fab fa-html5"></i> HTML/CSS</div>
+                </div>
+            </div>
+            <div class="skill-category-wrap" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Backend & Systems</h3>
+                <div class="skill-badges">
+                    <div class="badge-item"><i class="fab fa-java"></i> Java</div>
+                    <div class="badge-item"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="badge-item"><i class="fab fa-python"></i> Python</div>
+                </div>
+            </div>
+            <div class="skill-category-wrap" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Mobile & Data</h3>
+                <div class="skill-badges">
+                    <div class="badge-item"><i class="fas fa-mobile-alt"></i> Flutter</div>
+                    <div class="badge-item"><i class="fas fa-code"></i> Kotlin</div>
+                    <div class="badge-item"><i class="fas fa-database"></i> MongoDB</div>
+                    <div class="badge-item"><i class="fas fa-server"></i> MySQL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section - Large Visual Cards -->
+    <section id="projects" class="section-container">
+        <div class="section-tag">Showcase</div>
+        <h2 class="section-heading">Featured Engineering</h2>
+        
+        <div class="projects-featured">
+            <!-- Project 1: Internal Mark Management System -->
+            <div class="project-mega-card" data-aos="fade-up">
+                <div class="project-visual p-grad-1">
+                    <div class="floating-mockup">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <span class="p-category">Academic Management Platform</span>
+                    <h3>Internal Mark Management System</h3>
+                    <p>A full-stack academic management platform that replaces manual Excel-based internal mark tracking with a centralized system for faculty, advisors, HODs, and students. Built with React, Node.js, and PostgreSQL using a scalable API architecture capable of managing thousands of student records.</p>
+                    <div class="p-modules">
+                        <h4>Core Modules:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Role-Based Authentication (Admin, HOD, Faculty, Advisor, Student)</li>
+                            <li><i class="fas fa-check-circle"></i> Student Record Management</li>
+                            <li><i class="fas fa-check-circle"></i> Subject & Course Management</li>
+                            <li><i class="fas fa-check-circle"></i> Internal Marks Calculation (IAT, Assignment, Attendance)</li>
+                            <li><i class="fas fa-check-circle"></i> Report Generation & Printing</li>
+                            <li><i class="fas fa-check-circle"></i> Admin & Faculty Dashboards</li>
+                        </ul>
+                    </div>
+                    <div class="p-tags">
+                        <span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Architecture <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 2: AI-Assisted Peer Code Review Platform -->
+            <div class="project-mega-card reverse" data-aos="fade-up">
+                <div class="project-visual p-grad-2">
+                    <div class="floating-mockup">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <span class="p-category">Developer Collaboration Platform</span>
+                    <h3>AI-Assisted Peer Code Review Platform</h3>
+                    <p>A full-stack developer collaboration platform that enables structured peer code reviews and AI-assisted feedback. Developers can submit code snippets, receive peer review feedback, and improve code quality through collaborative learning. The platform integrates AI-based code analysis using Groq (Llama 3.3) to provide automated suggestions before human review.</p>
+                    <div class="p-modules">
+                        <h4>Core Modules:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> User Authentication (Admin, Reviewer, Submitter)</li>
+                            <li><i class="fas fa-check-circle"></i> Code Submission Portal</li>
+                            <li><i class="fas fa-check-circle"></i> Peer Review & Feedback System</li>
+                            <li><i class="fas fa-check-circle"></i> AI-Powered Code Analysis (Groq API)</li>
+                            <li><i class="fas fa-check-circle"></i> Submission Tracking Dashboard</li>
+                            <li><i class="fas fa-check-circle"></i> Admin Analytics & Reviewer Leaderboard</li>
+                        </ul>
+                    </div>
+                    <div class="p-tags">
+                        <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Bootstrap</span><span>Groq AI</span>
+                    </div>
+                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 3: Prompt Craft AI – Elite Full Stack Generator -->
+            <div class="project-mega-card" data-aos="fade-up">
+                <div class="project-visual p-grad-3">
+                    <div class="floating-mockup">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <span class="p-category">Generative AI Platform</span>
+                    <h3>Prompt Craft AI – Elite Full Stack Generator</h3>
+                    <p>An AI-powered development platform that converts high-level prompts into structured full-stack application architectures. The system assists developers in generating application scaffolding, UI components, backend logic, and deployment-ready project structures using AI-driven automation.</p>
+                    <div class="p-modules">
+                        <h4>Core Modules:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Prompt Input & Processing</li>
+                            <li><i class="fas fa-check-circle"></i> AI Code Generation Engine</li>
+                            <li><i class="fas fa-check-circle"></i> Full Stack Project Architecture Generator</li>
+                            <li><i class="fas fa-check-circle"></i> Live Preview Sandbox</li>
+                            <li><i class="fas fa-check-circle"></i> Project Export & Prompt History</li>
+                        </ul>
+                    </div>
+                    <div class="p-tags">
+                        <span>Python</span><span>OpenAI API</span><span>React</span>
+                    </div>
+                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 4: AI Sports Talent Assessment Platform -->
+            <div class="project-mega-card reverse" data-aos="fade-up">
+                <div class="project-visual p-grad-1">
+                    <div class="floating-mockup">
+                        <i class="fas fa-running"></i>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <span class="p-category">AI Sports Analytics Platform</span>
+                    <h3>AI Sports Talent Assessment Platform</h3>
+                    <p>An AI-powered sports analytics platform that evaluates athlete performance through video-based analysis and structured player profiling. The platform enables coaches and talent scouts to identify promising players using AI-driven insights and performance metrics.</p>
+                    <div class="p-modules">
+                        <h4>Core Modules:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Player Registration & Profile Management</li>
+                            <li><i class="fas fa-check-circle"></i> Video Upload & Performance Processing</li>
+                            <li><i class="fas fa-check-circle"></i> AI-Based Performance Analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Talent Ranking & Evaluation</li>
+                            <li><i class="fas fa-check-circle"></i> Coach Intelligence Dashboard</li>
+                            <li><i class="fas fa-check-circle"></i> Performance Reporting & Insights</li>
+                        </ul>
+                    </div>
+                    <div class="p-tags">
+                        <span>Flutter</span><span>TensorFlow</span><span>Firebase</span><span>Computer Vision</span>
+                    </div>
+                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications Section -->
+    <section id="achievements" class="section-container">
+        <div class="section-tag">Recognition</div>
+        <h2 class="section-heading">Achievements & Certifications</h2>
+        
+        <div class="achievements-grid">
+            <!-- 1. Research Paper Publication -->
+            <div class="ach-card" data-aos="fade-up">
+                <div class="ach-img-container" onclick="openCertModal('Research Paper Publication', 'IJRPR')">
+                    <div class="ach-placeholder p-grad-1"><i class="fas fa-file-alt"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2025</span>
+                    <span class="ach-tag">Research</span>
+                    <h3>Research Paper Publication</h3>
+                    <p class="ach-org">IJRPR Journal</p>
+                    <p class="ach-desc">Research paper accepted and published in IJRPR focusing on a centralized academic mark management platform.</p>
+                </div>
+            </div>
+
+            <!-- 2. Full Stack Web Development Internship -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="ach-img-container" onclick="openCertModal('Full Stack Development Internship', 'Future Interns')">
+                    <div class="ach-placeholder p-grad-2"><i class="fas fa-laptop-code"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2026</span>
+                    <span class="ach-tag">Internship</span>
+                    <h3>Full Stack Web Development Internship</h3>
+                    <p class="ach-org">Future Interns</p>
+                    <p class="ach-desc">Selected for a Full Stack Web Development Internship program focused on real-world development and project-based learning.</p>
+                </div>
+            </div>
+
+            <!-- 3. Web Development Internship -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="ach-img-container" onclick="openCertModal('Web Development Internship', 'CodeAlpha')">
+                    <div class="ach-placeholder p-grad-3"><i class="fas fa-code"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2026</span>
+                    <span class="ach-tag">Internship</span>
+                    <h3>Web Development Internship</h3>
+                    <p class="ach-org">CodeAlpha</p>
+                    <p class="ach-desc">Completed a Web Development Internship gaining practical experience in modern web technologies and development workflows.</p>
+                </div>
+            </div>
+
+            <!-- 4. HackTiVate Hackathon Participation -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="ach-img-container" onclick="openCertModal('HackTiVate Hackathon', 'Titanium 2026')">
+                    <div class="ach-placeholder p-grad-1"><i class="fas fa-trophy"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2026</span>
+                    <span class="ach-tag">Hackathon</span>
+                    <h3>HackTiVate Hackathon Participation</h3>
+                    <p class="ach-org">Rajalakshmi Engineering College – Titanium 2026</p>
+                    <p class="ach-desc">Participated in a 24-hour HackTiVate hackathon demonstrating technical innovation and problem-solving skills.</p>
+                </div>
+            </div>
+
+            <!-- 5. Kalam 2025 Dual Debug Event -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="ach-img-container" onclick="openCertModal('Kalam 2025: Dual Debug', 'SIET')">
+                    <div class="ach-placeholder p-grad-2"><i class="fas fa-bug"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2025</span>
+                    <span class="ach-tag">Competition</span>
+                    <h3>Kalam 2025 Dual Debug Event</h3>
+                    <p class="ach-org">Sri Shakthi Institute of Engineering and Technology</p>
+                    <p class="ach-desc">Participated in the Dual Debug coding competition during Kalam 2025 intercollegiate tech festival.</p>
+                </div>
+            </div>
+
+            <!-- 6. Loop Legends Python Competition -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="ach-img-container" onclick="openCertModal('Loop Legends Python Competition', 'Technical Coding')">
+                    <div class="ach-placeholder p-grad-3"><i class="fab fa-python"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2025</span>
+                    <span class="ach-tag">Competition</span>
+                    <h3>Loop Legends Python Competition</h3>
+                    <p class="ach-org">Technical Coding Competition</p>
+                    <p class="ach-desc">Participated in a Python-based coding competition focused on algorithmic and programming challenges.</p>
+                </div>
+            </div>
+
+            <!-- 7. Python Engineer Certification -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="ach-img-container" onclick="openCertModal('Python Engineer', 'Mimo')">
+                    <div class="ach-placeholder p-grad-1"><i class="fab fa-python"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2024</span>
+                    <span class="ach-tag">Certification</span>
+                    <h3>Python Engineer Certification</h3>
+                    <p class="ach-org">Mimo Platform</p>
+                    <p class="ach-desc">Earned certification covering Python fundamentals, scripting, and object-oriented programming concepts.</p>
+                </div>
+            </div>
+
+            <!-- 8. Python Programming Workshop -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="ach-img-container" onclick="openCertModal('Python Workshop', 'NIT Trichy')">
+                    <div class="ach-placeholder p-grad-2"><i class="fas fa-microchip"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2025</span>
+                    <span class="ach-tag">Certification</span>
+                    <h3>Python Programming Workshop</h3>
+                    <p class="ach-org">RemarkSkill in association with NIT Trichy</p>
+                    <p class="ach-desc">Completed a technical workshop on Python programming and development practices.</p>
+                </div>
+            </div>
+
+            <!-- 9. Complete Python Masterclass -->
+            <div class="ach-card" data-aos="fade-up" data-aos-delay="800">
+                <div class="ach-img-container" onclick="openCertModal('Python Masterclass', 'Udemy')">
+                    <div class="ach-placeholder p-grad-3"><i class="fab fa-python"></i></div>
+                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+                <div class="ach-info">
+                    <span class="ach-year">2025</span>
+                    <span class="ach-tag">Certification</span>
+                    <h3>Complete Python Masterclass</h3>
+                    <p class="ach-org">Udemy</p>
+                    <p class="ach-desc">Completed a comprehensive Python course covering programming concepts, modules, APIs, and real-world coding practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCertModal()">&times;</button>
+            <div id="modal-image-placeholder" class="modal-placeholder"></div>
+            <div class="modal-details">
+                <h2 id="modal-title"></h2>
+                <p id="modal-org"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developer Showcase Section -->
+    <section id="showcase" class="section-container bg-glow-dark">
+        <div class="showcase-content">
+            <div class="showcase-left" data-aos="fade-right">
+                <div class="section-tag">Activity</div>
+                <h2 class="section-heading">Developer Ecosystem</h2>
+                <p>Actively contributing to the global developer community through open-source projects and continuous learning.</p>
+                <div class="github-stats-mockup">
+                    <div class="stat-box">
+                        <span class="num">500+</span>
+                        <span class="label">Commits</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="num">12</span>
+                        <span class="label">Repositories</span>
+                    </div>
+                </div>
+                <a href="https://github.com/prasanna-b007" target="_blank" class="btn-modern secondary large">
+                    <i class="fab fa-github"></i> Explore GitHub Profile
+                </a>
+            </div>
+            <div class="showcase-right" data-aos="zoom-in">
+                <div class="glass-box profile-highlight">
+                    <div class="profile-header">
+                        <div class="profile-avatar">P</div>
+                        <div class="profile-info">
+                            <h4>Prasanna B</h4>
+                            <span>Full Stack Engineer</span>
+                        </div>
+                    </div>
+                    <div class="profile-achievements">
+                        <div class="ach-item">
+                            <i class="fas fa-medal"></i>
+                            <span>AI Innovation Lead</span>
+                        </div>
+                        <div class="ach-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Open Source Contributor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-container">
+        <div class="contact-card" data-aos="flip-up">
+            <div class="contact-left">
+                <h2>Let's build something <span class="gradient-text">Extraordinary</span>.</h2>
+                <p>Currently seeking opportunities to innovate and contribute to high-impact engineering teams.</p>
+                <div class="social-row">
+                    <a href="mailto:prasannabalaji0110@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/prasanna-b007" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/prasanna-b-a44414338/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <form class="minimal-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Tell me about your vision" rows="4" required></textarea>
+                <button type="submit">Submit Request <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="minimal-footer">
+        <div class="footer-bottom">
+            <span>&copy; 2026 Prasanna B</span>
+            <div class="footer-dot"></div>
+            <span>Built with AI & Passion</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
