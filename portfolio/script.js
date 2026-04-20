@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a large, wireframe Icosahedron
         const geometry = new THREE.IcosahedronGeometry(15, 2);
         const material = new THREE.MeshBasicMaterial({
-            color: 0x007aff,
+            color: 0x3DDCFF,
             wireframe: true,
             transparent: true,
             opacity: 0.15
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add a secondary, smaller rotating element
         const innerGeo = new THREE.IcosahedronGeometry(8, 1);
         const innerMat = new THREE.MeshBasicMaterial({
-            color: 0x5e5ce6,
+            color: 0x8B5CF6,
             wireframe: true,
             transparent: true,
             opacity: 0.1
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 6. Smooth Scrolling for Navigation
-    document.querySelectorAll('.nav-item, .btn-modern, .btn-p-link').forEach(link => {
+    document.querySelectorAll('.nav-link, .btn-modern, .btn-p-link, .btn-gradient-border').forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href.startsWith('#')) {
@@ -159,34 +159,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 7. Dynamic Navbar on Scroll
-    const nav = document.querySelector('.glass-nav');
+    const nav = document.querySelector('.super-nav');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            nav.style.transform = 'translateX(-50%) translateY(-10px)';
-            nav.style.width = '85%';
-            nav.style.padding = '0 8px 0 24px';
-        } else {
-            nav.style.transform = 'translateX(-50%) translateY(0)';
-            nav.style.width = '90%';
+        if (nav) {
+            if (window.scrollY > 100) {
+                nav.style.padding = '10px 4vw';
+                nav.style.background = 'rgba(10, 10, 12, 0.9)';
+            } else {
+                nav.style.padding = '15px 4vw';
+                nav.style.background = 'rgba(10, 10, 12, 0.6)';
+            }
         }
     });
 
     // 8. Mobile Menu Logic (Basic)
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navMenu = document.querySelector('.nav-menu');
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '80px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--clr-surface)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderRadius = '20px';
-                navLinks.style.border = '1px solid var(--clr-border)';
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.background = 'var(--clr-surface)';
+                navMenu.style.padding = '20px';
+                navMenu.style.borderRadius = '16px';
+                navMenu.style.border = '1px solid var(--clr-border)';
             }
         });
     }
