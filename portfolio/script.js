@@ -1,291 +1,314 @@
-/**
- * High-End Developer Portfolio Script
- * Dynamic Elements, Micro-interactions, and 3D Visuals
- */
+/* ============================================================
+   PRASANNA B — Portfolio Script
+   MagicUI-inspired: blur-fade scroll reveal, accordion,
+   dark mode toggle, dock interactions, typing effect,
+   scroll progress, 3D tilt, active section highlighting
+   ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const themeIcon = themeToggle.querySelector('i');
+(function () {
+  'use strict';
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        body.classList.replace('theme-dark', 'theme-light');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+  /* ── 1. DARK MODE ──────────────────────────────────────── */
+  const html = document.documentElement;
+
+  function getStoredTheme() {
+    return localStorage.getItem('theme') || 'dark';
+  }
+
+  function applyTheme(theme) {
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      if (iconSun) iconSun.style.display = '';
+      if (iconMoon) iconMoon.style.display = 'none';
+    } else {
+      html.classList.remove('dark');
+      if (iconSun) iconSun.style.display = 'none';
+      if (iconMoon) iconMoon.style.display = '';
     }
+  }
 
-    themeToggle.addEventListener('click', () => {
-        if (body.classList.contains('theme-dark')) {
-            body.classList.replace('theme-dark', 'theme-light');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('theme', 'light');
+  // Apply dark class ASAP to prevent flash
+  if (getStoredTheme() === 'dark') {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  /* ── 2. BLUR FADE SCROLL REVEAL ────────────────────────── */
+  function initBlurFade() {
+    const elements = document.querySelectorAll('.blur-fade');
+
+    // Immediately show elements already in viewport on page load
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // animate once
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    elements.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /* ── 3. WORK ACCORDION ─────────────────────────────────── */
+  function toggleWork(itemId) {
+    const item = document.getElementById(itemId);
+    if (!item) return;
+
+    const isOpen = item.classList.contains('open');
+    const trigger = item.querySelector('.work-trigger');
+
+    if (isOpen) {
+      item.classList.remove('open');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('open');
+      if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Expose globally (used by inline onclick)
+  window.toggleWork = toggleWork;
+
+  /* ── 4. DOCK: active section highlighting on scroll ────── */
+  function initDockHighlight() {
+    var dockLinks = document.querySelectorAll('.dock-nav a[data-section]');
+    var sections = document.querySelectorAll('section[id]');
+
+    if (!sections.length || !dockLinks.length) return;
+
+    function updateActiveSection() {
+      var scrollY = window.scrollY + window.innerHeight / 3;
+
+      var currentSection = '';
+      sections.forEach(function (section) {
+        if (section.offsetTop <= scrollY) {
+          currentSection = section.id;
+        }
+      });
+
+      dockLinks.forEach(function (link) {
+        if (link.getAttribute('data-section') === currentSection) {
+          link.classList.add('dock-active');
         } else {
-            body.classList.replace('theme-light', 'theme-dark');
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('theme', 'dark');
+          link.classList.remove('dock-active');
         }
-    });
-
-    // 2. Cursor Glow Tracking
-    const cursorGlow = document.querySelector('.cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-    });
-
-    // 2. Typed.js Initialization
-    new Typed('#typed-roles', {
-        strings: [
-            'Full Stack Developer',
-            'AI Application Builder',
-            'Java Systems Architect',
-            'Problem Solver'
-        ],
-        typeSpeed: 60,
-        backSpeed: 40,
-        backDelay: 2000,
-        loop: true,
-        cursorChar: '_'
-    });
-
-    // 3. AOS Initialization
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-out-expo',
-        once: true,
-        offset: 80
-    });
-
-    // 4. Three.js - Epic Wireframe Orb
-    const initThree = () => {
-        const canvas = document.querySelector('#three-canvas');
-        if (!canvas) return;
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        // Create a large, wireframe Icosahedron
-        const geometry = new THREE.IcosahedronGeometry(15, 2);
-        const material = new THREE.MeshBasicMaterial({
-            color: 0x3DDCFF,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.15
-        });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        // Add a secondary, smaller rotating element
-        const innerGeo = new THREE.IcosahedronGeometry(8, 1);
-        const innerMat = new THREE.MeshBasicMaterial({
-            color: 0x8B5CF6,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.1
-        });
-        const innerMesh = new THREE.Mesh(innerGeo, innerMat);
-        scene.add(innerMesh);
-
-        camera.position.z = 30;
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            mesh.rotation.x += 0.001;
-            mesh.rotation.y += 0.001;
-            innerMesh.rotation.x -= 0.002;
-            innerMesh.rotation.y -= 0.002;
-            renderer.render(scene, camera);
-        };
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-    };
-    initThree();
-
-    // 5. tsParticles - Minimal Floating Grid
-    tsParticles.load("hero-particles", {
-        particles: {
-            number: { value: 40, density: { enable: true, value_area: 800 } },
-            color: { value: "#ffffff" },
-            opacity: { value: 0.1, random: true },
-            size: { value: 1.5, random: true },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#ffffff",
-                opacity: 0.05,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 0.4,
-                direction: "none",
-                random: true,
-                out_mode: "out"
-            }
-        },
-        interactivity: {
-            events: {
-                onhover: { enable: true, mode: "grab" }
-            }
-        }
-    });
-
-    // 6. Smooth Scrolling for Navigation
-    document.querySelectorAll('.nav-link, .btn-modern, .btn-p-link, .btn-gradient-border').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    // 7. Dynamic Navbar on Scroll
-    const nav = document.querySelector('.super-nav');
-    window.addEventListener('scroll', () => {
-        if (nav) {
-            if (window.scrollY > 100) {
-                nav.style.padding = '10px 4vw';
-                nav.style.background = 'rgba(10, 10, 12, 0.9)';
-            } else {
-                nav.style.padding = '15px 4vw';
-                nav.style.background = 'rgba(10, 10, 12, 0.6)';
-            }
-        }
-    });
-
-    // 8. Mobile Menu Logic (Basic)
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
-                navMenu.style.left = '0';
-                navMenu.style.width = '100%';
-                navMenu.style.background = 'var(--clr-surface)';
-                navMenu.style.padding = '20px';
-                navMenu.style.borderRadius = '16px';
-                navMenu.style.border = '1px solid var(--clr-border)';
-            }
-        });
+      });
     }
 
-    // 9. EmailJS Integration
-    (function() {
-        emailjs.init("SnSbbZLc7pO9dHHbK");
-    })();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    updateActiveSection(); // initial check
+  }
 
-    const contactForm = document.querySelector('.minimal-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = 'Sending Message... <i class="fas fa-spinner fa-spin"></i>';
-            btn.disabled = true;
+  /* ── 4b. DOCK: macOS magnification effect ───────────────── */
+  function initDockMagnify() {
+    var dock = document.getElementById('dock-nav');
+    if (!dock) return;
 
-            // EmailJS Service ID and Template ID
-            const serviceID = 'service_8db9k64';
-            const templateID = 'template_g6sed49';
+    var icons = dock.querySelectorAll('.dock-icon');
+    var BASE_SIZE = 40;
+    var MAX_SIZE = 56;
+    var MAGNIFY_RANGE = 120; // px radius of influence
 
-            emailjs.sendForm(serviceID, templateID, contactForm)
-                .then(() => {
-                    btn.innerHTML = 'Message sent successfully! <i class="fas fa-check"></i>';
-                    btn.style.background = '#00ff88';
-                    btn.style.color = '#000';
-                    contactForm.reset();
-
-                    setTimeout(() => {
-                        btn.innerHTML = originalContent;
-                        btn.style.background = 'white';
-                        btn.style.color = 'black';
-                        btn.disabled = false;
-                    }, 4000);
-                }, (err) => {
-                    btn.innerHTML = 'Failed to send message. Please try again. <i class="fas fa-exclamation-triangle"></i>';
-                    btn.style.background = '#ff4d4d';
-                    btn.style.color = '#fff';
-                    console.error('EmailJS Error:', err);
-
-                    setTimeout(() => {
-                        btn.innerHTML = originalContent;
-                        btn.style.background = 'white';
-                        btn.style.color = 'black';
-                        btn.disabled = false;
-                    }, 4000);
-                });
-        });
+    function resetIcons() {
+      icons.forEach(function (icon) {
+        icon.style.width = BASE_SIZE + 'px';
+        icon.style.height = BASE_SIZE + 'px';
+        icon.style.transform = '';
+      });
     }
 
-    // 10. Certificate Modal Logic
-    window.openCertModal = (title, org) => {
-        const modal = document.getElementById('cert-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalOrg = document.getElementById('modal-org');
-        const modalImgPlaceholder = document.getElementById('modal-image-placeholder');
+    dock.addEventListener('mousemove', function (e) {
+      icons.forEach(function (icon) {
+        var rect = icon.getBoundingClientRect();
+        var iconCenterX = rect.left + rect.width / 2;
+        var iconCenterY = rect.top + rect.height / 2;
 
-        modalTitle.textContent = title;
-        modalOrg.textContent = org;
-        
-        // Pick a random gradient for the placeholder
-        const grads = ['p-grad-1', 'p-grad-2', 'p-grad-3'];
-        const randomGrad = grads[Math.floor(Math.random() * grads.length)];
-        modalImgPlaceholder.className = `modal-placeholder ${randomGrad}`;
-        
-        // Set icon based on title keywords
-        let iconClass = 'fa-certificate';
-        if (title.toLowerCase().includes('python')) iconClass = 'fab fa-python';
-        if (title.toLowerCase().includes('hackathon') || title.toLowerCase().includes('kalam')) iconClass = 'fa-trophy';
-        if (title.toLowerCase().includes('research')) iconClass = 'fa-file-alt';
-        if (title.toLowerCase().includes('web')) iconClass = 'fa-laptop-code';
-        
-        modalImgPlaceholder.innerHTML = `<i class="fas ${iconClass}"></i>`;
+        var dx = e.clientX - iconCenterX;
+        var dy = e.clientY - iconCenterY;
+        var distance = Math.sqrt(dx * dx + dy * dy);
 
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scroll
-    };
-
-    window.closeCertModal = () => {
-        const modal = document.getElementById('cert-modal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scroll
-    };
-
-    // Close modal on outside click
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('cert-modal');
-        if (e.target === modal) {
-            closeCertModal();
+        // Gaussian-like falloff
+        var scale;
+        if (distance < MAGNIFY_RANGE) {
+          var factor = 1 - (distance / MAGNIFY_RANGE);
+          // Smooth cubic ease
+          factor = factor * factor * (3 - 2 * factor);
+          var newSize = BASE_SIZE + (MAX_SIZE - BASE_SIZE) * factor;
+          scale = newSize / BASE_SIZE;
+        } else {
+          scale = 1;
         }
+
+        icon.style.transform = 'scale(' + scale + ')';
+      });
     });
 
-    // Close modal on Escape key
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeCertModal();
-        }
+    dock.addEventListener('mouseleave', function () {
+      icons.forEach(function (icon) {
+        icon.style.transform = 'scale(1)';
+      });
     });
-});
+  }
+
+  /* ── 5. SMOOTH SCROLL for dock links ────────────────────── */
+  function initSmoothScroll() {
+    const dockLinks = document.querySelectorAll('.dock-nav a[href^="#"]');
+    dockLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Back to top link
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  }
+
+  /* ── 6. AVATAR INITIALS FALLBACK ────────────────────────── */
+  function initAvatar() {
+    // If you add a photo, set the src here:
+    // const img = new Image();
+    // img.src = 'your-photo.jpg';
+    // img.onload = function() {
+    //   document.getElementById('hero-avatar').innerHTML = '';
+    //   document.getElementById('hero-avatar').appendChild(img);
+    // };
+    // For now, keep the PB initials placeholder
+  }
+
+  /* ── 7. TYPING EFFECT ──────────────────────────────────── */
+  function initTypingEffect() {
+    const typedEl = document.getElementById('typed-text');
+    if (!typedEl) return;
+
+    const roles = [
+      'Full Stack Developer',
+      'AI Engineer',
+      'Research Author',
+      'Freelancer',
+      'Problem Solver'
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+
+    function type() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        typedEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 40;
+      } else {
+        typedEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 80;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        // Pause at end of word
+        typingSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 400;
+      }
+
+      setTimeout(type, typingSpeed);
+    }
+
+    // Start after a small delay
+    setTimeout(type, 800);
+  }
+
+  /* ── 8. SCROLL PROGRESS BAR ────────────────────────────── */
+  function initScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = scrollPercent + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  /* ── 9. 3D CARD TILT on project cards ──────────────────── */
+  function initCardTilt() {
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
+
+        card.style.transform = 'translateY(-2px) perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ── 10. INIT ─────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
+    // Apply full theme including icon swap after DOM is ready
+    applyTheme(getStoredTheme());
+
+    // Wire up the theme toggle button
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        const current = getStoredTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      });
+    }
+
+    initBlurFade();
+    initDockHighlight();
+    initDockMagnify();
+    initSmoothScroll();
+    initAvatar();
+    initTypingEffect();
+    initScrollProgress();
+    initCardTilt();
+  });
+
+})();

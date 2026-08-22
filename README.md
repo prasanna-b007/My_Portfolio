@@ -1,93 +1,76 @@
-Prasanna B
-
-prasannabalaji0110@gmail.com | +91 9790353211    
-https://github.com/prasanna-b007 | https://www.linkedin.com/in/prasanna-b-a44414338/
+PRASANNA B
+322/4, Gandhinagar, Kuranguchavadi,
+Narasathipatti (PO), Salem – 636004
+prasannabalaji0110@gmail.com | +91 9790353211 | github.com/prasanna-b007
+www.linkedin.com/in/prasanna-b-a44414338
 Skills
-
-Languages : C, Java, Python, JavaScript, SQL, Shell 
-Technologies & Tools : Bootstrap, Express.js, Flutter, GitHub, Kotlin, MongoDB, MySQL, MySQL Workbench, NextJS, Node.js, Postman, ReactJS, Rust, Tauri  
-Core Concepts: Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks
-AI/ML: Machine Learning, Model Training, Data Preprocessing, Model Evaluation, Supervised Learning, Logistic Regression, AI Model Integration (LLaMA, OpenAI APIs), Basic NLP
-
-Work Experience
-
-Future Interns 											Feb 2026 – Mar 2026 
-Full Stack Web Development Intern:
-
-• Engaged in a Full Stack Web Development Internship emphasizing hands-on project development and industry-relevant practices.
-• Developed and deployed a personal portfolio website using HTML, CSS, and JavaScript, with GitHub integration for version control and project tracking.
-• Built a Client Lead Management System (Mini CRM) featuring full CRUD operations, RESTful APIs using Node.js and Express, and database integration with MongoDB/MySQL.
-• Developed a Local Business Website as a client-oriented project, ensuring alignment with real-world requirements and usability standards.
-
-Oasis Infobyte                                                                                                  Mar 2026 – Apr 2026
-
-Web Development and Designing Intern:
-
-• Completed a Web Development and Designing Internship focused on building responsive and user-friendly web applications.
-• Developed projects such as a Landing Page and Personal Portfolio Website using HTML, CSS, and JavaScript.
-• Built interactive web applications including basic tools (e.g., calculator/to-do apps) to strengthen core JavaScript concepts and DOM manipulation.
-• Applied responsive design techniques, layout structuring, and styling to ensure cross-device compatibility and improved user experience.
-• Gained hands-on experience in real-world project development, focusing on UI/UX design, frontend logic, and modern web development practices.
-
-CodeAlpha                                                                                         Apr 2026 – June 2026
-
-Web Development Intern:
-
-• Completed a Web Development Internship focused on building responsive web applications using HTML, CSS, and JavaScript.
-• Developed a web-based Age Calculator application implementing date and time logic using JavaScript.
-• Built a To-Do List application with features such as task creation, editing, deletion, and completion tracking using DOM manipulation and event handling.
-• Applied core concepts including input validation, CRUD operations, and browser local storage for data persistence.
-• Uploaded project source code to GitHub and documented implementation as part of internship submission requirements.
-
-
+Languages: Java, JavaScript, Python, C, SQL
+Web Development: HTML, CSS, React.js, Node.js, Express.js, Bootstrap, Next.js
+Databases: MongoDB, PostgreSQL, MySQL
+Mobile Development: Flutter, Kotlin
+Tools & Platforms: Git, GitHub, VS Code, Cursor, Postman, Tauri, Firebase
+Core Concepts: OOP, DBMS, REST APIs, Data Structures & Algorithms, Operating Systems, Computer Networks
+AI / ML: Model Integration (LLaMA, OpenAI, Gemini APIs), Supervised Learning, Basic NLP, TensorFlow
 Education
-
-Sri Shakthi Institute of Engineering and Technology	Sep 2024 - Sep 2028
-B.E. in Computer Science and Engineering	CGPA:8.29/10
-Relevant Coursework: Object Oriented Programming, Databases, Discrete Mathematics, Data Structures and Algorithms, Operating Systems, Computer Networks, Advanced Data Structures and Algorithms.
-
-
+Sri Shakthi Institute of Engineering and Technology Sep 2024 - Sep 2028
+B.E. in Computer Science and Engineering CGPA: 8.29/10
+Relevant Coursework: Object Oriented Programming, Databases, Discrete Mathematics, Data Structures and Algorithms, Operating
+Systems, Computer Networks, Advanced Data Structures and Algorithms.
 Project Work
-
-•	AI-Assisted Peer Code Review Platform (2026): Developed a full-stack developer collaboration platform enabling structured peer code reviews and AI-assisted feedback. Built using Node.js, Express, MongoDB, and Bootstrap. Integrated AI-based code analysis using Groq (LLaMA 3) to provide automated suggestions, along with modules for code submission, peer feedback, and performance tracking dashboards.
-
-•	AI Sports Talent Assessment Platform (2026): Developed an AI-based sports analytics platform to evaluate athlete performance using video-based analysis and structured profiling. Built using Flutter, TensorFlow, and Firebase. Implemented modules for player registration, video processing, AI-based performance evaluation, talent ranking, and coach analytics dashboard.
-
-•	Internal Mark Management System (2025): Developed a full-stack academic management platform to replace manual Excel-based internal mark tracking with a centralized system for faculty, advisors, HODs, and students. Built using React, Node.js, and PostgreSQL with a scalable API architecture. Implemented role-based authentication, student record management, internal marks calculation, report generation, and interactive dashboards for efficient academic monitoring.
-
-•	Prompt Craft AI – Full Stack Generator (2026): Developed an AI-powered platform that converts high-level prompts into structured full-stack application architectures. Built using Python, OpenAI API, and React. Implemented modules for prompt processing, AI-driven code generation, project scaffolding, live preview, and exportable development-ready outputs.
-
-•	Sonix – Voice Workflow Assistant (2026): Developed a voice-controlled AI desktop application for automating workflows and system tasks using natural language commands. Built using Tauri, React, and Rust with integration of Google Gemini AI for intent recognition. Implemented real-time speech detection, multi-step workflow execution, and OS-level automation features
-
-
+• AI-Assisted Peer Code Review Platform (2026): Full-stack developer collaboration platform with structured peer
+reviews and AI-assisted feedback. Built with Node.js, Express, MongoDB, and Bootstrap. Integrated Groq (LLaMA 3)
+for automated code analysis, peer feedback, and performance dashboards.
+• Internal Mark Management System (2025): Centralized academic platform replacing manual Excel-based tracking
+for faculty, advisors, HODs, and students. Built with React, Node.js, and PostgreSQL. Features role-based
+authentication, marks calculation, report generation, and interactive dashboards.
+• Prompt Craft AI - Elite Full Stack Generator (2026): AI platform converting high-level prompts into structured fullstack architectures using Python, OpenAI API, and React. Modules include prompt processing, AI-driven code
+generation, project scaffolding, live preview, and exportable outputs. Published in IJRPR, Vol. 7, Issue 4, April 2026.
+• Sonix - Voice Workflow Assistant (2026): Voice-controlled AI desktop application for automating system tasks via
+natural language. Built with Tauri, React, and Rust; integrated Google Gemini AI for intent recognition, real-time
+speech detection, multi-step workflow execution, and OS-level automation.
+• Health-Bot – Smart Healthcare Triage Assistant (2026): Developed an intelligent healthcare assistant that analyzes
+user symptoms through adaptive AI-driven questioning and provides confidence-based disease predictions. Built using
+Flutter for the frontend and Python (Rasa) for the AI backend, with Geoapify Places API and Google Maps integration
+for real-time hospital recommendations and navigation. Implemented emergency detection, risk stratification, specialist
+recommendation, dynamic triage workflow, and shareable health assessment reports.
+• SEO Ranking & Website Analysis System (2026): Developed a full-stack web application for analyzing website
+SEO performance and generating optimization reports. Built using React.js, Node.js, Express.js, and MongoDB with
+Axios and Cheerio for website crawling and HTML parsing. Implemented automated SEO auditing, SEO score
+calculation, metadata analysis, heading and image optimization checks, link analysis, and actionable recommendations
+to improve search engine visibility.
+Freelance Experience
+Company Website Development – Ardortec (2026)
+Designed and developed a responsive corporate website for Ardortec using React.js and Tailwind CSS. Integrated
+EmailJS for contact and inquiry handling and Firebase for hosting and deployment. Implemented modern UI
+components, responsive layouts, and optimized performance for cross-device accessibility.
+AZUO – Corporate Business Website (2026)
+Developed a modern and responsive corporate website for AZUO using Next.js, React, TypeScript, and Tailwind CSS.
+Implemented interactive UI components with Framer Motion, built a contact form integrated with EmailJS API for
+inquiry handling, and developed server-side API routes using Next.js App Router.
+Designed and developed dedicated webpages for the company's products and services, ensuring consistent branding and
+clear information architecture. Optimized the website for responsive design, smooth scrolling, and cross-device
+performance to deliver an engaging user experience.
 Hackathons and Workshops
-
-
-•	Participated in the “HackTiVate” Hackathon at Rajalakshmi Engineering College, Chennai (2026).
-•	 Participated in the “Kalam 2025” Dual Debug Event at Sri Shakthi Institute of Engineering and Technology.
-•	Participated in the “Odoo x SNS Coimbatore Hiring Hackathon ’26” at SNS College of Technology, Coimbatore.
-•	 Participated in the “Loop Legends” Python Coding Competition.
-•	 Earned the “Python Engineer Certification” at Mimo.
-•	 Attended a Python Programming Workshop at NIT Trichy.
-•	 Completed the “Complete Python Masterclass” on Udemy.
-
-
+• Participated in the "HackTiVate" Hackathon at Rajalakshmi Engineering College, Chennai (2026).
+• Participated in the "Odoo x SNS Coimbatore Hiring Hackathon 26" at SNS College of Technology, Coimbatore.
+• Participated in a 24 hours hackathon - Regional Al submit 2026 at Sri Ramakrishna Institute of Technology,
+Coimbatore.
+• Participated in the "Kalam 2025 Dual Debug Event" at Sri Shakthi Institute of Engineering and Technology.
+• Attended the workshop conducted in NVIDIA RTX AI PC Day 2026 in CODISSIA, Coimbatore - January 2026
+• Attended the 2-Day TN Global Startup Summit 2025 in CODISSIA, Coimbatore - October 2025
+• Participated in the "Loop Legends" Python Coding Competition.
+• Attended a Python Programming Workshop at NIT Trichy.
 Awards and Certificates
-
-•	“Prompt Craft AI – Elite Full Stack Generator”, published in International Journal of Research Publication and Reviews (IJRPR), Volume 7, Issue 4, April 2026.
-•	“Internal Mark Entry System”, published in International Journal of Research Publication and Reviews (IJRPR), Volume 6, Issue 11, November 2025.
-•	Completed Full Stack Web Development Internship at Future Interns (2026), gaining firsthand experience in real-world projects. 
-•	Completed Web Development Internship at CodeAlpha (2026). 
-•	Completed Web Development and Designing Internship at Oasis Infobyte (2026). 
-•	Participated in HackTiVate Hackathon at Rajalakshmi Engineering College, Chennai (2026). 
-•	Participated in the “Odoo x SNS Coimbatore Hiring Hackathon ’26” at SNS College of Technology, Coimbatore.
-•	Participated in Kalam 2025 Dual Debug Event. 
-•	Participated in Loop Legends Python Coding Competition. 
-•	Earned Python Engineer Certification from Mimo. 
-•	Completed Python Programming Workshop at NIT Trichy. 
-•	Completed Complete Python Masterclass on Udemy.
-
-
-
-
-
+• Published "Prompt Craft AI - Elite Full Stack Generator" in International Journal of Research Publication and Reviews
+(IJRPR), Volume 7, Issue 4, April 2026.
+• Published "Internal Mark Entry System" in International Journal of Research Publication and Reviews (IJRPR),
+Volume 6, Issue 11, November 2025.
+• Participated in HackTiVate Hackathon at Rajalakshmi Engineering College, Chennai (2026).
+• Participated in Odoo x SNS Coimbatore Hiring Hackathon 26 at SNS College of Technology, Coimbatore.
+• Participated in Kalam 2025 Dual Debug Event at Sri Shakthi Institute of Engineering and Technology.
+• Participated in Loop Legends Python Coding Competition.
+• Completed Python Bootcamp (1-Day Intensive) on Udemy, covering core programming concepts and practical
+implementation.
+• Completed Java Programming Course on Udemy, focusing on object-oriented programming and application
+development.
+• Earned Python Engineer Certification from Mimo.

@@ -1,655 +1,725 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prasanna B | Premium Developer Portfolio</title>
-    <meta name="description" content="A futuristic developer portfolio for Prasanna B, specializing in Full Stack and AI Engineering.">
-    <!-- Google Fonts: Bricolage Grotesque & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- GSAP for advanced animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- AOS, Typed.js, tsParticles -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prasanna B | Full Stack Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Prasanna B — Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology. Building full-stack applications, AI-powered platforms, and scalable systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="theme-dark">
-    <!-- High-end Cursor Gradient Following Effect -->
-    <div class="cursor-glow"></div>
+<body>
 
-    <!-- Navigation - Redesigned Premium Header -->
-    <header class="app-header">
-        <nav class="super-nav">
-            <a href="#" class="nav-brand">
-                <span class="brand-name"><span class="text-gradient">Prasanna B</span></span>
-            </a>
+  <!-- ── SCROLL PROGRESS BAR ──────────────────────────────── -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
 
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li class="nav-item"><a href="#showcase" class="nav-link">Showcase</a></li>
-            </ul>
 
-            <div class="nav-utilities">
-                <button id="theme-toggle" class="magnetic-btn theme-btn" aria-label="Toggle Theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="#contact" class="btn-gradient-border">
-                    <span class="btn-inner">Contact <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
-            </div>
-        </nav>
-    </header>
+  <!-- ── DOCK NAV ─────────────────────────────────────────── -->
+  <nav class="dock-nav" id="dock-nav" role="navigation" aria-label="Main navigation">
+    <!-- Home -->
+    <a href="#hero" class="dock-icon" data-tooltip="Home" data-section="hero" id="dock-home" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </a>
 
-    <!-- Hero Section -->
-    <section class="hero-fullscreen">
-        <div id="hero-particles"></div>
-        <canvas id="three-canvas"></canvas>
-        
-        <div class="hero-main">
-            <div class="hero-badge" data-aos="fade-down">
-                <span class="pulse"></span> Available for elite projects
-            </div>
-            <h1 class="hero-title" data-aos="fade-up">
-                Building the <span class="gradient-text">Future</span> of Web.
-            </h1>
-            <div class="hero-typer" data-aos="fade-up" data-aos-delay="100">
-                I'm <span>Prasanna B</span>, a <span id="typed-roles"></span>
-            </div>
-            <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-                Computer Science Engineering Student at Sri Shakthi Institute of Engineering and Technology. Crafting high-performance full-stack applications with AI at the core.
+    <!-- Projects -->
+    <a href="#projects" class="dock-icon" data-tooltip="Projects" data-section="projects" id="dock-projects" aria-label="Projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+    </a>
+
+    <!-- Achievements -->
+    <a href="#achievements" class="dock-icon" data-tooltip="Achievements" data-section="achievements" id="dock-achievements" aria-label="Achievements">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="6"/>
+        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+      </svg>
+    </a>
+
+    <div class="dock-separator"></div>
+
+    <!-- GitHub -->
+    <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="dock-icon" data-tooltip="GitHub" id="dock-github" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/prasanna-b-a44414338/" target="_blank" rel="noopener noreferrer" class="dock-icon" data-tooltip="LinkedIn" id="dock-linkedin" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+
+
+    <!-- Email -->
+    <a href="mailto:prasannabalaji0110@gmail.com" class="dock-icon" data-tooltip="Email" id="dock-email" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+    </a>
+
+    <div class="dock-separator"></div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="dock-icon" data-tooltip="Theme" aria-label="Toggle theme">
+      <!-- Sun icon (shown in dark mode) -->
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+      </svg>
+      <!-- Moon icon (shown in light mode) -->
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- ── PAGE WRAPPER ──────────────────────────────────────── -->
+  <div class="page-wrapper">
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-row">
+          <div class="hero-text">
+            <h1 class="hero-name blur-fade" data-delay="1">Hi, I'm Prasanna 👋</h1>
+            <p class="hero-subtitle blur-fade" data-delay="2">
+              <span id="typed-text"></span><span class="typing-cursor">|</span>
             </p>
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
-                <a href="#projects" class="btn-modern primary">Explore Work <i class="fas fa-arrow-right"></i></a>
-                <a href="https://github.com/prasanna-b007" target="_blank" class="btn-modern secondary"><i class="fab fa-github"></i> GitHub</a>
+            <p class="hero-desc blur-fade" data-delay="2">
+              Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology.
+              I love building full-stack applications, AI-powered platforms, and scalable systems.
+            </p>
+          </div>
+          <div class="hero-avatar-wrap blur-fade" data-delay="1">
+            <div class="avatar-glow-ring">
+              <div class="avatar" id="hero-avatar" aria-label="Prasanna B avatar">PB</div>
             </div>
+          </div>
         </div>
-
-        <div class="hero-footer-stats">
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <span class="stat-val">Bachelor of Engineering</span>
-                <span class="stat-label">Engineering Focus</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
-                <span class="stat-val">Java</span>
-                <span class="stat-label">Core Mastery</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
-                <span class="stat-val">AI</span>
-                <span class="stat-label">Innovation Drive</span>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- About Section - Bento Style -->
-    <section id="about" class="section-container">
-        <div class="section-tag">About Me</div>
-        <div class="bento-grid">
-            <!-- Card 1: Intro -->
-            <div class="bento-card" data-aos="fade-up">
-                <div class="card-interior">
-                    <i class="fas fa-user-astronaut"></i>
-                    <h2>Aspiring Full-Stack Engineer</h2>
-                    <p>Computer Science Engineering student at Sri Shakthi Institute of Engineering and Technology, focused on building scalable web applications, AI-powered platforms, and modern full-stack systems.</p>
-                    <div class="bento-badges">
-                        <span class="bento-badge">Java</span>
-                        <span class="bento-badge">React</span>
-                        <span class="bento-badge">Node.js</span>
-                        <span class="bento-badge">MongoDB</span>
-                        <span class="bento-badge">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Education -->
-            <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-interior">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Academic Pathway</h3>
-                    <div class="edu-details">
-                        <p class="edu-degree">Bachelor of Engineering – Computer Science</p>
-                        <p class="edu-org">Sri Shakthi Institute of Engineering and Technology</p>
-                        <p class="edu-year">Expected Graduation:2028</p>
-                    </div>
-                    <div class="code-window decorative" style="margin-top: 20px; opacity: 0.6;">
-                        <div class="window-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="code-content" style="padding: 10px; font-size: 0.7rem;">
-                            <code><span class="keyword">class</span> Academics {<br>
-                            &nbsp;&nbsp;cgpa: <span class="string">'8.29'</span><br>
-                            }</code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Vision -->
-            <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-interior">
-                    <i class="fas fa-rocket"></i>
-                    <h3>The Vision</h3>
-                    <p>"My goal is to build intelligent systems and scalable platforms that make advanced technology accessible and impactful for real-world users."</p>
-                </div>
-            </div>
-
-            <!-- Card 4: Stats -->
-            <div class="bento-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-interior">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Developer Impact</h3>
-                    <div class="stats-list">
-                        <div class="stat-row highlight">
-                            <span class="stat-label-bento">Projects Built</span>
-                            <span class="stat-value-bento">5+</span>
-                        </div>
-                        <div class="stat-row highlight">
-                            <span class="stat-label-bento">Technologies Used</span>
-                            <span class="stat-value-bento">20+</span>
-                        </div>
-                        <div class="stat-row highlight">
-                            <span class="stat-label-bento">Certifications</span>
-                            <span class="stat-value-bento">6+</span>
-                        </div>
-                        <div class="stat-row highlight">
-                            <span class="stat-label-bento">Hackathons</span>
-                            <span class="stat-value-bento">2+</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- ── ABOUT ──────────────────────────────────────────── -->
+    <section id="about">
+      <div class="blur-fade" data-delay="3">
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="blur-fade" data-delay="4">
+        <p class="about-text">
+          I'm a passionate Computer Science Engineering student building intelligent systems and scalable platforms.
+          I specialize in full-stack web development with <strong>React</strong>, <strong>Node.js</strong>, and <strong>PostgreSQL</strong>,
+          and I integrate AI capabilities using <strong>Groq (LLaMA 3.3)</strong>, <strong>Google Gemini</strong>, and <strong>OpenAI APIs</strong>.
+          I've published two research papers in <a href="https://ijrpr.com" target="_blank" rel="noopener noreferrer">IJRPR</a>,
+          participated in multiple hackathons, and completed freelance projects for real clients.
+          My goal is to build technology that is both powerful and accessible.
+        </p>
+      </div>
     </section>
 
-    <!-- Skills Section - Floating Grid -->
-    <section id="skills" class="section-container bg-alt">
-        <div class="section-tag">Capabilities</div>
-        <h2 class="section-heading">Tech Stack & Mastery</h2>
-        
-        <div class="skills-showcase">
-            <div class="skill-category-wrap" data-aos="zoom-in">
-                <h3>Languages & AI Models</h3>
-                <div class="skill-badges">
-                    <div class="badge-item"><i class="fab fa-python"></i> Python</div>
-                    <div class="badge-item"><i class="fab fa-java"></i> Java</div>
-                    <div class="badge-item"><i class="fa-solid fa-c"></i> C</div>
-                    <div class="badge-item"><i class="fas fa-brain"></i> AI/ML & NLP</div>
-                    <div class="badge-item"><i class="fas fa-terminal"></i> Shell / SQL</div>
+    <!-- ── WORK EXPERIENCE ────────────────────────────────── -->
+    <section id="work">
+      <div class="blur-fade" data-delay="5">
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      <div class="work-list blur-fade" data-delay="6">
+
+        <!-- Ardortec -->
+        <div class="work-item" id="work-ardortec">
+          <button class="work-trigger" aria-expanded="false" aria-controls="work-ardortec-desc" onclick="toggleWork('work-ardortec')">
+            <div class="work-left">
+              <div class="work-logo-placeholder" aria-hidden="true">AT</div>
+              <div class="work-meta">
+                <div class="work-company">
+                  Ardortec
+                  <svg class="work-chevron work-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                  <svg class="work-chevron work-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </div>
+                <div class="work-title-text">Freelance Web Developer</div>
+              </div>
             </div>
-            <div class="skill-category-wrap" data-aos="zoom-in" data-aos-delay="100">
-                <h3>Frontend & UI</h3>
-                <div class="skill-badges">
-                    <div class="badge-item"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="badge-item"><i class="fab fa-react"></i> ReactJS / NextJS</div>
-                    <div class="badge-item"><i class="fab fa-html5"></i> HTML/CSS</div>
-                    <div class="badge-item"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-                </div>
-            </div>
-            <div class="skill-category-wrap" data-aos="zoom-in" data-aos-delay="200">
-                <h3>Backend & Systems</h3>
-                <div class="skill-badges">
-                    <div class="badge-item"><i class="fab fa-node-js"></i> Node.js</div>
-                    <div class="badge-item"><i class="fas fa-server"></i> Express.js</div>
-                    <div class="badge-item"><i class="fa-brands fa-rust"></i> Rust</div>
-                    <div class="badge-item"><i class="fas fa-database"></i> MongoDB / MySQL</div>
-                </div>
-            </div>
-            <div class="skill-category-wrap" data-aos="zoom-in" data-aos-delay="300">
-                <h3>Mobile & Tools</h3>
-                <div class="skill-badges">
-                    <div class="badge-item"><i class="fas fa-mobile-alt"></i> Flutter</div>
-                    <div class="badge-item"><i class="fas fa-code"></i> Kotlin</div>
-                    <div class="badge-item"><i class="fab fa-github"></i> GitHub</div>
-                    <div class="badge-item"><i class="fas fa-desktop"></i> Tauri / Postman</div>
-                </div>
-            </div>
+            <div class="work-date">2026</div>
+          </button>
+          <div class="work-description" id="work-ardortec-desc">
+            Designed and developed a responsive corporate website using React.js and Tailwind CSS.
+            Integrated EmailJS for contact and inquiry handling and Firebase for hosting and deployment.
+            Implemented modern UI components, responsive layouts, and optimized performance for cross-device accessibility.
+          </div>
         </div>
+
+        <!-- AZUO -->
+        <div class="work-item" id="work-azuo">
+          <button class="work-trigger" aria-expanded="false" aria-controls="work-azuo-desc" onclick="toggleWork('work-azuo')">
+            <div class="work-left">
+              <div class="work-logo-placeholder" aria-hidden="true">AZ</div>
+              <div class="work-meta">
+                <div class="work-company">
+                  AZUO
+                  <svg class="work-chevron work-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                  <svg class="work-chevron work-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+                <div class="work-title-text">Freelance Web Developer</div>
+              </div>
+            </div>
+            <div class="work-date">2026</div>
+          </button>
+          <div class="work-description" id="work-azuo-desc">
+            Developed a modern, responsive corporate website using Next.js, React, TypeScript, and Tailwind CSS.
+            Implemented interactive UI with Framer Motion, a contact form integrated with EmailJS API, and
+            server-side API routes via Next.js App Router. Designed dedicated product and service pages
+            ensuring consistent branding and cross-device performance.
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Projects Section - Large Visual Cards -->
-    <section id="projects" class="section-container">
-        <div class="section-tag">Showcase</div>
-        <h2 class="section-heading">Featured Engineering</h2>
-        
-        <div class="projects-featured">
-            <!-- Project 1: Internal Mark Management System -->
-            <div class="project-mega-card" data-aos="fade-up">
-                <div class="project-visual p-grad-1">
-                    <div class="floating-mockup">
-                        <i class="fas fa-university"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <span class="p-category">Academic Management Platform</span>
-                    <h3>Internal Mark Management System</h3>
-                    <p>A full-stack academic management platform that replaces manual Excel-based internal mark tracking with a centralized system for faculty, advisors, HODs, and students. Built with React, Node.js, and PostgreSQL using a scalable API architecture capable of managing thousands of student records.</p>
-                    <div class="p-modules">
-                        <h4>Core Modules:</h4>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Role-Based Authentication (Admin, HOD, Faculty, Advisor, Student)</li>
-                            <li><i class="fas fa-check-circle"></i> Student Record Management</li>
-                            <li><i class="fas fa-check-circle"></i> Subject & Course Management</li>
-                            <li><i class="fas fa-check-circle"></i> Internal Marks Calculation (IAT, Assignment, Attendance)</li>
-                            <li><i class="fas fa-check-circle"></i> Report Generation & Printing</li>
-                            <li><i class="fas fa-check-circle"></i> Admin & Faculty Dashboards</li>
-                        </ul>
-                    </div>
-                    <div class="p-tags">
-                        <span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span>
-                    </div>
-                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Architecture <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
+    <!-- ── EDUCATION ───────────────────────────────────────── -->
+    <section id="education">
+      <div class="blur-fade" data-delay="7">
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-list">
 
-            <!-- Project 2: AI-Assisted Peer Code Review Platform -->
-            <div class="project-mega-card reverse" data-aos="fade-up">
-                <div class="project-visual p-grad-2">
-                    <div class="floating-mockup">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <span class="p-category">Developer Collaboration Platform</span>
-                    <h3>AI-Assisted Peer Code Review Platform</h3>
-                    <p>A full-stack developer collaboration platform that enables structured peer code reviews and AI-assisted feedback. Developers can submit code snippets, receive peer review feedback, and improve code quality through collaborative learning. The platform integrates AI-based code analysis using Groq (Llama 3.3) to provide automated suggestions before human review.</p>
-                    <div class="p-modules">
-                        <h4>Core Modules:</h4>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> User Authentication (Admin, Reviewer, Submitter)</li>
-                            <li><i class="fas fa-check-circle"></i> Code Submission Portal</li>
-                            <li><i class="fas fa-check-circle"></i> Peer Review & Feedback System</li>
-                            <li><i class="fas fa-check-circle"></i> AI-Powered Code Analysis (Groq API)</li>
-                            <li><i class="fas fa-check-circle"></i> Submission Tracking Dashboard</li>
-                            <li><i class="fas fa-check-circle"></i> Admin Analytics & Reviewer Leaderboard</li>
-                        </ul>
-                    </div>
-                    <div class="p-tags">
-                        <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Bootstrap</span><span>Groq AI</span>
-                    </div>
-                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
-                </div>
+        <!-- Sri Shakthi -->
+        <a href="https://siet.ac.in" target="_blank" rel="noopener noreferrer" class="education-item blur-fade" data-delay="8">
+          <div class="edu-left">
+            <div class="edu-logo-placeholder"></div>
+            <div class="edu-meta">
+              <div class="edu-school">
+                Sri Shakthi Institute of Engineering and Technology
+                <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </div>
+              <div class="edu-degree">Bachelor of Engineering – Computer Science (B.E. CS)</div>
             </div>
+          </div>
+          <div class="edu-year">2024 – 2028</div>
+        </a>
 
-            <!-- Project 3: Prompt Craft AI – Elite Full Stack Generator -->
-            <div class="project-mega-card" data-aos="fade-up">
-                <div class="project-visual p-grad-3">
-                    <div class="floating-mockup">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <span class="p-category">Generative AI Platform</span>
-                    <h3>Prompt Craft AI – Elite Full Stack Generator</h3>
-                    <p>An AI-powered development platform that converts high-level prompts into structured full-stack application architectures. The system assists developers in generating application scaffolding, UI components, backend logic, and deployment-ready project structures using AI-driven automation.</p>
-                    <div class="p-modules">
-                        <h4>Core Modules:</h4>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Prompt Input & Processing</li>
-                            <li><i class="fas fa-check-circle"></i> AI Code Generation Engine</li>
-                            <li><i class="fas fa-check-circle"></i> Full Stack Project Architecture Generator</li>
-                            <li><i class="fas fa-check-circle"></i> Live Preview Sandbox</li>
-                            <li><i class="fas fa-check-circle"></i> Project Export & Prompt History</li>
-                        </ul>
-                    </div>
-                    <div class="p-tags">
-                        <span>Python</span><span>OpenAI API</span><span>React</span>
-                    </div>
-                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- Project 4: AI Sports Talent Assessment Platform -->
-            <div class="project-mega-card reverse" data-aos="fade-up">
-                <div class="project-visual p-grad-1">
-                    <div class="floating-mockup">
-                        <i class="fas fa-running"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <span class="p-category">AI Sports Analytics Platform</span>
-                    <h3>AI Sports Talent Assessment Platform</h3>
-                    <p>An AI-powered sports analytics platform that evaluates athlete performance through video-based analysis and structured player profiling. The platform enables coaches and talent scouts to identify promising players using AI-driven insights and performance metrics.</p>
-                    <div class="p-modules">
-                        <h4>Core Modules:</h4>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Player Registration & Profile Management</li>
-                            <li><i class="fas fa-check-circle"></i> Video Upload & Performance Processing</li>
-                            <li><i class="fas fa-check-circle"></i> AI-Based Performance Analysis</li>
-                            <li><i class="fas fa-check-circle"></i> Talent Ranking & Evaluation</li>
-                            <li><i class="fas fa-check-circle"></i> Coach Intelligence Dashboard</li>
-                            <li><i class="fas fa-check-circle"></i> Performance Reporting & Insights</li>
-                        </ul>
-                    </div>
-                    <div class="p-tags">
-                        <span>Flutter</span><span>TensorFlow</span><span>Firebase</span><span>Computer Vision</span>
-                    </div>
-                    <a href="https://github.com/prasanna-b007" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- Project 5: Sonix - Voice Workflow Assistant -->
-            <div class="project-mega-card" data-aos="fade-up">
-                <div class="project-visual p-grad-sonix">
-                    <div class="floating-mockup">
-                        <i class="fas fa-microphone-alt"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <span class="p-category">Desktop AI Assistant</span>
-                    <h3>Sonix - Voice Workflow Assistant</h3>
-                    <p>A voice-controlled AI desktop application built with Tauri and React. It operates via natural language commands to automate system tasks, control web apps, and dictate text, leveraging Google Gemini for complex intent recognition and a Rust backend for deep OS integration.</p>
-                    <div class="p-modules">
-                        <h4>Core Modules:</h4>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Real-time Speech & Wake-Word Detection</li>
-                            <li><i class="fas fa-check-circle"></i> AI Intent Parsing via Google Gemini</li>
-                            <li><i class="fas fa-check-circle"></i> Multi-step Workflow Execution</li>
-                            <li><i class="fas fa-check-circle"></i> Rust Backend for Native System Control</li>
-                            <li><i class="fas fa-check-circle"></i> Transparent Always-on-Top Overlay UI</li>
-                        </ul>
-                    </div>
-                    <div class="p-tags">
-                        <span>Tauri</span><span>Rust</span><span>React</span><span>Gemini AI</span><span>Web Speech API</span>
-                    </div>
-                    <a href="https://github.com/prasanna-b007/voice-workflow-assistant" target="_blank" class="btn-p-link">View Repository <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Achievements & Certifications Section -->
-    <section id="achievements" class="section-container">
-        <div class="section-tag">Recognition</div>
-        <h2 class="section-heading">Achievements & Certifications</h2>
-        
-        <div class="achievements-grid">
-            <!-- 1. Research Paper Publication -->
-            <div class="ach-card" data-aos="fade-up">
-                <div class="ach-img-container" onclick="openCertModal('Research Paper Publication', 'IJRPR')">
-                    <div class="ach-placeholder p-grad-1"><i class="fas fa-file-alt"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2025</span>
-                    <span class="ach-tag">Research</span>
-                    <h3>Research Paper Publication</h3>
-                    <p class="ach-org">IJRPR Journal</p>
-                    <p class="ach-desc">Research paper accepted and published in IJRPR focusing on a centralized academic mark management platform.</p>
-                </div>
-            </div>
+    <!-- ── SKILLS ──────────────────────────────────────────── -->
+    <section id="skills">
+      <div class="blur-fade" data-delay="9">
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-categories blur-fade" data-delay="10">
 
-            <!-- 2. Full Stack Web Development Internship -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="ach-img-container" onclick="openCertModal('Full Stack Development Internship', 'Future Interns')">
-                    <div class="ach-placeholder p-grad-2"><i class="fas fa-laptop-code"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Internship</span>
-                    <h3>Full Stack Web Development Internship</h3>
-                    <p class="ach-org">Future Interns</p>
-                    <p class="ach-desc">Selected for a Full Stack Web Development Internship program focused on real-world development and project-based learning.</p>
-                </div>
-            </div>
-
-            <!-- 3. Web Development Internship -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="ach-img-container" onclick="openCertModal('Web Development Internship', 'CodeAlpha')">
-                    <div class="ach-placeholder p-grad-3"><i class="fas fa-code"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Internship</span>
-                    <h3>Web Development Internship</h3>
-                    <p class="ach-org">CodeAlpha</p>
-                    <p class="ach-desc">Completed a Web Development Internship gaining practical experience in modern web technologies and development workflows.</p>
-                </div>
-            </div>
-
-            <!-- 4. HackTiVate Hackathon Participation -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="ach-img-container" onclick="openCertModal('HackTiVate Hackathon', 'Titanium 2026')">
-                    <div class="ach-placeholder p-grad-1"><i class="fas fa-trophy"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Hackathon</span>
-                    <h3>HackTiVate Hackathon Participation</h3>
-                    <p class="ach-org">Rajalakshmi Engineering College – Titanium 2026</p>
-                    <p class="ach-desc">Participated in a 24-hour HackTiVate hackathon demonstrating technical innovation and problem-solving skills.</p>
-                </div>
-            </div>
-
-            <!-- 5. Kalam 2025 Dual Debug Event -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="ach-img-container" onclick="openCertModal('Kalam 2025: Dual Debug', 'SIET')">
-                    <div class="ach-placeholder p-grad-2"><i class="fas fa-bug"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2025</span>
-                    <span class="ach-tag">Competition</span>
-                    <h3>Kalam 2025 Dual Debug Event</h3>
-                    <p class="ach-org">Sri Shakthi Institute of Engineering and Technology</p>
-                    <p class="ach-desc">Participated in the Dual Debug coding competition during Kalam 2025 intercollegiate tech festival.</p>
-                </div>
-            </div>
-
-            <!-- 6. Loop Legends Python Competition -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="ach-img-container" onclick="openCertModal('Loop Legends Python Competition', 'Technical Coding')">
-                    <div class="ach-placeholder p-grad-3"><i class="fab fa-python"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2025</span>
-                    <span class="ach-tag">Competition</span>
-                    <h3>Loop Legends Python Competition</h3>
-                    <p class="ach-org">Technical Coding Competition</p>
-                    <p class="ach-desc">Participated in a Python-based coding competition focused on algorithmic and programming challenges.</p>
-                </div>
-            </div>
-
-            <!-- 7. Python Engineer Certification -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="ach-img-container" onclick="openCertModal('Python Engineer', 'Mimo')">
-                    <div class="ach-placeholder p-grad-1"><i class="fab fa-python"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2024</span>
-                    <span class="ach-tag">Certification</span>
-                    <h3>Python Engineer Certification</h3>
-                    <p class="ach-org">Mimo Platform</p>
-                    <p class="ach-desc">Earned certification covering Python fundamentals, scripting, and object-oriented programming concepts.</p>
-                </div>
-            </div>
-
-            <!-- 8. Python Programming Workshop -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="700">
-                <div class="ach-img-container" onclick="openCertModal('Python Workshop', 'NIT Trichy')">
-                    <div class="ach-placeholder p-grad-2"><i class="fas fa-microchip"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2025</span>
-                    <span class="ach-tag">Certification</span>
-                    <h3>Python Programming Workshop</h3>
-                    <p class="ach-org">RemarkSkill in association with NIT Trichy</p>
-                    <p class="ach-desc">Completed a technical workshop on Python programming and development practices.</p>
-                </div>
-            </div>
-
-            <!-- 9. Complete Python Masterclass -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="800">
-                <div class="ach-img-container" onclick="openCertModal('Python Masterclass', 'Udemy')">
-                    <div class="ach-placeholder p-grad-3"><i class="fab fa-python"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2025</span>
-                    <span class="ach-tag">Certification</span>
-                    <h3>Complete Python Masterclass</h3>
-                    <p class="ach-org">Udemy</p>
-                    <p class="ach-desc">Completed a comprehensive Python course covering programming concepts, modules, APIs, and real-world coding practices.</p>
-                </div>
-            </div>
-
-            <!-- 10. Oasis Infobyte Internship -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="ach-img-container" onclick="openCertModal('Web Development & Designing Internship', 'Oasis Infobyte')">
-                    <div class="ach-placeholder p-grad-1"><i class="fas fa-laptop-code"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Internship</span>
-                    <h3>Web Development & Designing Internship</h3>
-                    <p class="ach-org">Oasis Infobyte</p>
-                    <p class="ach-desc">Completed a Web Development and Designing Internship focused on responsive web applications and UI/UX design.</p>
-                </div>
-            </div>
-
-            <!-- 11. Prompt Craft AI Research Paper -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="ach-img-container" onclick="openCertModal('Research Paper Publication', 'IJRPR')">
-                    <div class="ach-placeholder p-grad-2"><i class="fas fa-file-alt"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Research</span>
-                    <h3>Prompt Craft AI Publication</h3>
-                    <p class="ach-org">IJRPR Journal</p>
-                    <p class="ach-desc">Research paper accepted and published focusing on an AI-powered Full Stack development generator.</p>
-                </div>
-            </div>
-
-            <!-- 12. Odoo x SNS Hackathon -->
-            <div class="ach-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="ach-img-container" onclick="openCertModal('Odoo x SNS Coimbatore Hiring Hackathon', 'SNS College')">
-                    <div class="ach-placeholder p-grad-3"><i class="fas fa-trophy"></i></div>
-                    <div class="ach-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-                <div class="ach-info">
-                    <span class="ach-year">2026</span>
-                    <span class="ach-tag">Hackathon</span>
-                    <h3>Odoo x SNS Hackathon</h3>
-                    <p class="ach-org">SNS College of Technology</p>
-                    <p class="ach-desc">Participated in a dynamic hiring hackathon focusing on collaborative software engineering and business frameworks.</p>
-                </div>
-            </div>
+        <!-- Languages -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">Languages</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><i class="devicon-java-plain colored"></i> <span>Java</span></span>
+            <span class="skill-badge"><i class="devicon-python-plain colored"></i> <span>Python</span></span>
+            <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> <span>JavaScript</span></span>
+            <span class="skill-badge"><i class="devicon-c-plain colored"></i> <span>C</span></span>
+            <span class="skill-badge"><i class="devicon-kotlin-plain colored"></i> <span>Kotlin</span></span>
+            <span class="skill-badge"><i class="devicon-azuresqldatabase-plain colored"></i> <span>SQL</span></span>
+            <span class="skill-badge"><i class="devicon-html5-plain colored"></i> <span>HTML</span></span>
+            <span class="skill-badge"><i class="devicon-css3-plain colored"></i> <span>CSS</span></span>
+          </div>
         </div>
+
+        <!-- Frameworks & Technologies -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">Frameworks & Technologies</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><i class="devicon-react-original colored"></i> <span>React.js</span></span>
+            <span class="skill-badge"><i class="devicon-nextjs-original"></i> <span>Next.js</span></span>
+            <span class="skill-badge"><i class="devicon-nodejs-plain colored"></i> <span>Node.js</span></span>
+            <span class="skill-badge"><i class="devicon-express-original"></i> <span>Express.js</span></span>
+            <span class="skill-badge"><i class="devicon-flutter-plain colored"></i> <span>Flutter</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> <span>Tauri</span></span>
+            <span class="skill-badge"><i class="devicon-bootstrap-plain colored"></i> <span>Bootstrap</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg> <span>REST APIs</span></span>
+          </div>
+        </div>
+
+        <!-- AI & Data -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">AI & Data</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><circle cx="12" cy="12" r="3"/></svg> <span>Groq API</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 6.627 12 0 12C6.627 12 12 17.373 12 24C12 17.373 17.373 12 24 12C17.373 12 12 6.627 12 0Z"/></svg> <span>Gemini API</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.77a6 6 0 0 0-.52-5.07 6.07 6.07 0 0 0-6.57-2.9 6 6 0 0 0-4.66-2.08 6.06 6.06 0 0 0-5.77 4.14 6 6 0 0 0-4.14 2.99 6 6 0 0 0 .82 7.15 6 6 0 0 0 .52 5.07 6.07 6.07 0 0 0 6.57 2.9 6 6 0 0 0 4.66 2.08 6.06 6.06 0 0 0 5.77-4.14 6 6 0 0 0 4.14-2.99 6.06 6.06 0 0 0-.82-7.15zM12 15.5a3.5 3.5 0 1 1 3.5-3.5 3.5 3.5 0 0 1-3.5 3.5z"/></svg> <span>OpenAI API</span></span>
+            <span class="skill-badge"><i class="devicon-tensorflow-line colored"></i> <span>TensorFlow</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <span>Basic NLP</span></span>
+          </div>
+        </div>
+
+        <!-- Databases & Cloud -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">Databases & Cloud</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><i class="devicon-postgresql-plain colored"></i> <span>PostgreSQL</span></span>
+            <span class="skill-badge"><i class="devicon-mongodb-plain colored"></i> <span>MongoDB</span></span>
+            <span class="skill-badge"><i class="devicon-mysql-plain colored"></i> <span>MySQL</span></span>
+            <span class="skill-badge"><i class="devicon-firebase-plain colored"></i> <span>Firebase</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> <span>DBMS</span></span>
+          </div>
+        </div>
+
+        <!-- Tools & Concepts -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">Tools & Concepts</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><i class="devicon-git-plain colored"></i> <span>Git</span></span>
+            <span class="skill-badge"><i class="devicon-github-original"></i> <span>GitHub</span></span>
+            <span class="skill-badge"><i class="devicon-postman-plain colored"></i> <span>Postman</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> <span>OOP</span></span>
+            <span class="skill-badge"><svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> <span>DSA</span></span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Certificate Modal -->
-    <div id="cert-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCertModal()">&times;</button>
-            <div id="modal-image-placeholder" class="modal-placeholder"></div>
-            <div class="modal-details">
-                <h2 id="modal-title"></h2>
-                <p id="modal-org"></p>
-            </div>
-        </div>
-    </div>
+    <!-- ── PROJECTS ────────────────────────────────────────── -->
+    <section id="projects">
+      <!-- Divider heading -->
+      <div class="section-divider blur-fade" data-delay="11">
+        <div class="divider-line"></div>
+        <span class="divider-label">My Projects</span>
+        <div class="divider-line right"></div>
+      </div>
+      <div class="section-center-heading blur-fade" data-delay="11">
+        <h2>Check out my latest work</h2>
+        <p>I've worked on a variety of projects, from academic platforms to AI-powered applications. Here are a few favorites.</p>
+      </div>
 
-    <!-- Developer Showcase Section -->
-    <section id="showcase" class="section-container bg-glow-dark">
-        <div class="showcase-content">
-            <div class="showcase-left" data-aos="fade-right">
-                <div class="section-tag">Activity</div>
-                <h2 class="section-heading">Developer Ecosystem</h2>
-                <p>Actively contributing to the global developer community through open-source projects and continuous learning.</p>
-                <div class="github-stats-mockup">
-                    <div class="stat-box">
-                        <span class="num">500+</span>
-                        <span class="label">Commits</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="num">12</span>
-                        <span class="label">Repositories</span>
-                    </div>
-                </div>
-                <a href="https://github.com/prasanna-b007" target="_blank" class="btn-modern secondary large">
-                    <i class="fab fa-github"></i> Explore GitHub Profile
-                </a>
+      <div class="projects-grid" style="margin-top: 32px;">
+
+        <!-- Project 1: Internal Mark Management System -->
+        <div class="project-card blur-fade" data-delay="12">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-1"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View Internal Mark Management System on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
             </div>
-            <div class="showcase-right" data-aos="zoom-in">
-                <div class="glass-box profile-highlight">
-                    <div class="profile-header">
-                        <div class="profile-avatar">P</div>
-                        <div class="profile-info">
-                            <h4>Prasanna B</h4>
-                            <span>Full Stack Engineer</span>
-                        </div>
-                    </div>
-                    <div class="profile-achievements">
-                        <div class="ach-item">
-                            <i class="fas fa-medal"></i>
-                            <span>AI Innovation Lead</span>
-                        </div>
-                        <div class="ach-item">
-                            <i class="fas fa-terminal"></i>
-                            <span>Open Source Contributor</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">Internal Mark Management System</div>
+                <div class="project-dates">2024 – 2025</div>
+              </div>
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
             </div>
+            <p class="project-desc">
+              A full-stack academic management platform replacing manual Excel-based internal mark tracking with a centralized system for faculty, HODs, advisors, and students. Features role-based auth, marks calculation, and report generation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Project 2: AI-Assisted Peer Code Review -->
+        <div class="project-card blur-fade" data-delay="12">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-2"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View AI Code Review on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">AI-Assisted Peer Code Review Platform</div>
+                <div class="project-dates">2025</div>
+              </div>
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
+            </div>
+            <p class="project-desc">
+              Full-stack developer collaboration platform with AI-assisted code feedback using Groq (LLaMA 3.3). Developers submit code, receive peer review, and get AI suggestions. Includes reviewer leaderboard and submission tracking.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Groq AI</span>
+              <span class="project-tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Prompt Craft AI -->
+        <div class="project-card blur-fade" data-delay="13">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-3"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View Prompt Craft AI on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">Prompt Craft AI – Full Stack Generator</div>
+                <div class="project-dates">2025 – 2026</div>
+              </div>
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
+            </div>
+            <p class="project-desc">
+              AI-powered platform that converts high-level prompts into full-stack application architectures. Generates UI components, backend logic, and deployment-ready scaffolding. Published in IJRPR Vol. 7, April 2026.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Gemini AI</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Health-Bot -->
+        <div class="project-card blur-fade" data-delay="13">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-4"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View Health-Bot on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">Health-Bot – Smart Healthcare Triage</div>
+                <div class="project-dates">2025</div>
+              </div>
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
+            </div>
+            <p class="project-desc">
+              Intelligent healthcare assistant that analyzes symptoms via AI-driven questioning, provides confidence-based disease predictions, emergency detection, specialist recommendations, and real-time hospital navigation via Geoapify.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Rasa</span>
+              <span class="project-tag">Geoapify</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Sonix -->
+        <div class="project-card blur-fade" data-delay="14">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-5"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007/voice-workflow-assistant" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View Sonix on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">Sonix – Voice Workflow Assistant</div>
+                <div class="project-dates">2025 – 2026</div>
+              </div>
+              <a href="https://github.com/prasanna-b007/voice-workflow-assistant" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
+            </div>
+            <p class="project-desc">
+              Voice-controlled AI desktop application built with Tauri and React. Uses natural language commands to automate system tasks, control web apps, and dictate text. Leverages Google Gemini for intent recognition and a Rust backend for OS integration.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Tauri</span>
+              <span class="project-tag">Rust</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Gemini AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: SEO Ranking System -->
+        <div class="project-card blur-fade" data-delay="14">
+          <div class="project-media-wrapper">
+            <div class="project-media-placeholder project-gradient-6"></div>
+            <div class="project-links-row">
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-badge-link" aria-label="View SEO System on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <div>
+                <div class="project-name">SEO Ranking & Website Analysis System</div>
+                <div class="project-dates">2025</div>
+              </div>
+              <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="Open project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+              </a>
+            </div>
+            <p class="project-desc">
+              Full-stack web application for analyzing website SEO performance and generating actionable reports. Uses Axios and Cheerio for crawling to deliver automated SEO audits, metadata analysis, and scoring.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React.js</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-container">
-        <div class="contact-card" data-aos="flip-up">
-            <div class="contact-left">
-                <h2>Let's build something <span class="gradient-text">Extraordinary</span>.</h2>
-                <p>Currently seeking opportunities to innovate and contribute to high-impact engineering teams.</p>
-                <div class="social-row">
-                    <a href="mailto:prasannabalaji0110@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+919790353211"><i class="fas fa-phone"></i></a>
-                    <a href="https://github.com/prasanna-b007" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/prasanna-b-a44414338/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
+    <!-- ── ACHIEVEMENTS & HACKATHONS ──────────────────────── -->
+    <section id="achievements">
+      <!-- Divider -->
+      <div class="section-divider blur-fade" data-delay="15">
+        <div class="divider-line"></div>
+        <span class="divider-label">Achievements</span>
+        <div class="divider-line right"></div>
+      </div>
+      <div class="section-center-heading blur-fade" data-delay="15">
+        <h2>I like building things</h2>
+        <p>From publishing research papers to competing in hackathons — here's what I've been up to.</p>
+      </div>
+
+      <div class="timeline" style="margin-top: 40px;" id="timeline-list">
+
+        <!-- 1. Internal Mark Entry System – IJRPR -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-publication">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
             </div>
-            <form class="minimal-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Tell me about your vision" rows="4" required></textarea>
-                <button type="submit">Submit Request <i class="fas fa-paper-plane"></i></button>
-            </form>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">November 2025</time>
+            <h3 class="timeline-title">Internal Mark Entry System – IJRPR Publication</h3>
+            <p class="timeline-location">IJRPR – Volume 6, Issue 11</p>
+            <p class="timeline-desc">Research paper published on a centralized academic mark management platform replacing manual Excel-based tracking with a scalable digital system.</p>
+          </div>
         </div>
+
+        <!-- 2. Prompt Craft AI – IJRPR -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-publication">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">April 2026</time>
+            <h3 class="timeline-title">Prompt Craft AI – IJRPR Publication</h3>
+            <p class="timeline-location">IJRPR – Volume 7, Issue 4</p>
+            <p class="timeline-desc">Research paper published on an AI-powered Full Stack development generator that converts high-level prompts into complete application architectures.</p>
+          </div>
+        </div>
+
+        <!-- 3. HackTiVate -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-hackathon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2026</time>
+            <h3 class="timeline-title">HackTiVate Hackathon</h3>
+            <p class="timeline-location">Rajalakshmi Engineering College, Chennai</p>
+            <p class="timeline-desc">Participated in HackTiVate, demonstrating technical innovation and full-stack development skills in a competitive hackathon environment.</p>
+          </div>
+        </div>
+
+        <!-- 4. Odoo x SNS -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-hackathon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2026</time>
+            <h3 class="timeline-title">Odoo x SNS Coimbatore Hiring Hackathon</h3>
+            <p class="timeline-location">SNS College of Technology, Coimbatore</p>
+            <p class="timeline-desc">Participated in a hiring hackathon focused on collaborative software engineering and business application frameworks using Odoo.</p>
+          </div>
+        </div>
+
+        <!-- 5. Regional AI Summit -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-hackathon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2026</time>
+            <h3 class="timeline-title">Regional AI Summit 2026</h3>
+            <p class="timeline-location">Sri Ramakrishna Institute of Technology, Coimbatore</p>
+            <p class="timeline-desc">Participated in a 24-hour AI-focused hackathon showcasing intelligent system development capabilities and applied machine learning solutions.</p>
+          </div>
+        </div>
+
+        <!-- 6. Kalam 2025 -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-hackathon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2025</time>
+            <h3 class="timeline-title">Kalam 2025 – Dual Debug Event</h3>
+            <p class="timeline-location">Sri Shakthi Institute of Engineering and Technology</p>
+            <p class="timeline-desc">Participated in the Dual Debug coding competition during Kalam 2025 intercollegiate tech festival.</p>
+          </div>
+        </div>
+
+        <!-- 7. Python Bootcamp – Udemy -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2025</time>
+            <h3 class="timeline-title">Python Bootcamp (1-Day Intensive)</h3>
+            <p class="timeline-location">Udemy</p>
+            <p class="timeline-desc">Completed a 1-day intensive Python bootcamp covering core programming concepts and practical implementation.</p>
+          </div>
+        </div>
+
+        <!-- 8. Java Course – Udemy -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2025</time>
+            <h3 class="timeline-title">Java Programming Course</h3>
+            <p class="timeline-location">Udemy</p>
+            <p class="timeline-desc">Completed a Java programming course focusing on object-oriented programming and application development.</p>
+          </div>
+        </div>
+
+        <!-- 9. Python Engineer – Mimo -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-cert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2024</time>
+            <h3 class="timeline-title">Python Engineer Certification</h3>
+            <p class="timeline-location">Mimo Platform</p>
+            <p class="timeline-desc">Earned certification covering Python fundamentals, scripting, and object-oriented programming concepts.</p>
+          </div>
+        </div>
+
+        <!-- 10. NIT Trichy Workshop -->
+        <div class="timeline-item blur-fade" data-delay="15">
+          <div class="timeline-connect">
+            <div class="timeline-icon-placeholder timeline-icon-workshop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <time class="timeline-date">2025</time>
+            <h3 class="timeline-title">Python Programming Workshop</h3>
+            <p class="timeline-location">RemarkSkill × NIT Trichy</p>
+            <p class="timeline-desc">Completed a technical workshop on Python programming and development best practices in association with NIT Trichy.</p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <footer class="minimal-footer">
-        <div class="footer-bottom">
-            <span>&copy; 2026 Prasanna B</span>
-            <div class="footer-dot"></div>
-            <span>Built with AI & Passion</span>
+    <!-- ── CONTACT ──────────────────────────────────────────── -->
+    <section id="contact">
+      <div class="contact-box blur-fade" data-delay="15">
+        <span class="contact-label">Contact</span>
+        <!-- Flickering grid background -->
+        <div class="flickering-grid" aria-hidden="true">
+          <div class="flickering-grid-inner"></div>
         </div>
-    </footer>
+        <div class="contact-inner">
+          <h2 class="contact-heading">Get in Touch</h2>
+          <p class="contact-text">
+            Want to chat? I'm always open to interesting projects and opportunities.
+            Reach out through any of the channels below.
+          </p>
+          <div class="contact-cta-row">
+            <a href="mailto:prasannabalaji0110@gmail.com" class="contact-cta contact-cta-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/prasanna-b-a44414338/" target="_blank" rel="noopener noreferrer" class="contact-cta contact-cta-secondary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/prasanna-b007" target="_blank" rel="noopener noreferrer" class="contact-cta contact-cta-secondary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+  </div><!-- end .page-wrapper -->
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+      Back to top
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
